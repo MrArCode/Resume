@@ -56,6 +56,15 @@
             line-height: 1.3;
         }
 
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #515154;
+        }
+
         .main-content {
             display: grid;
             grid-template-columns: 180px 1fr;
@@ -143,8 +152,15 @@
         }
 
         .skills-list li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #f5f5f7;
             color: #1d1d1f;
+        }
+
+        .skills-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
         }
 
         .skill-category {
@@ -337,8 +353,8 @@
         <h1 class="name">ARTUR CEGIEŁKA-POSŁUSZNY</h1>
         <div class="title">SOFTWARE ENGINEER</div>
         <div class="contact-info">
-            883-444-064 • a.c.posluszny@gmail.com<br>
-            https://gitlab.com/a.c.posluszny • Warsaw, Poland
+            883-444-064 • <a href="mailto:a.c.posluszny@gmail.com">a.c.posluszny@gmail.com</a><br>
+            <a href="https://gitlab.com/a.c.posluszny">https://gitlab.com/a.c.posluszny</a> • Warsaw, Poland
         </div>
     </header>
 
