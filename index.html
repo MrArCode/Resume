@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Cegiełka-Posłuszny - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.4;
+            color: #1d1d1f;
+            background: #fff;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm 20mm;
+            background: white;
+            min-height: 297mm;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 0.5px solid #1d1d1f;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            color: #1d1d1f;
+            line-height: 1.3;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 24px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 1px;
+            background: #1d1d1f;
+        }
+
+        .content .section h2 {
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .content .section h2::after {
+            width: 24px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .job-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 2px;
+        }
+
+        .company {
+            font-size: 11px;
+            color: #515154;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .date {
+            font-size: 10px;
+            color: #86868b;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 11px;
+            color: #1d1d1f;
+            line-height: 1.4;
+        }
+
+        .description ul {
+            padding-left: 12px;
+            margin-top: 4px;
+        }
+
+        .description li {
+            margin-bottom: 3px;
+        }
+
+        .skills-list {
+            list-style: none;
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            color: #1d1d1f;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+            color: #1d1d1f;
+        }
+
+        .skill-items {
+            color: #515154;
+            line-height: 1.3;
+        }
+
+        .languages {
+            list-style: none;
+            font-size: 10px;
+        }
+
+        .languages li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            color: #1d1d1f;
+            padding: 3px 0;
+        }
+
+        .language-level {
+            color: #86868b;
+            font-weight: 500;
+            font-size: 9px;
+        }
+
+        .interests-list {
+            font-size: 10px;
+            color: #1d1d1f;
+            line-height: 1.4;
+        }
+
+        .cert-item {
+            font-size: 10px;
+            color: #1d1d1f;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .cert-org {
+            color: #86868b;
+            font-size: 9px;
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 11px;
+            color: #1d1d1f;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .projects-list {
+            list-style: none;
+        }
+
+        .project-item {
+            margin-bottom: 14px;
+            font-size: 11px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 3px;
+        }
+
+        .project-description {
+            color: #515154;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .project-link {
+            color: #86868b;
+            font-size: 9px;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .project-link:hover {
+            color: #1d1d1f;
+        }
+
+        .tech-stack {
+            margin-top: 6px;
+            font-size: 10px;
+            padding-top: 6px;
+            border-top: 1px solid #f5f5f7;
+        }
+
+        .tech-label {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .tech-list {
+            color: #86868b;
+            line-height: 1.3;
+        }
+
+        .consent {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 0.5px solid #d1d1d6;
+            font-size: 8px;
+            color: #86868b;
+            line-height: 1.3;
+            text-align: justify;
+        }
+
+        /* Improved spacing and visual hierarchy */
+        .sidebar {
+            padding-right: 8px;
+        }
+
+        .content {
+            padding-left: 8px;
+        }
+
+        .sidebar .section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Better visual separation */
+        .experience-item:not(:last-child) {
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .education-item:not(:last-child) {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        /* Clean visual elements */
+        .languages li:hover {
+            background: #f9f9f9;
+            margin: 0 -4px;
+            padding: 3px 4px;
+            border-radius: 2px;
+        }
+
+        .skills-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        @media print {
+            .cv-container {
+                margin: 0;
+                padding: 12mm 15mm;
+                max-width: none;
+            }
+
+            body {
+                font-size: 11px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .main-content {
+                gap: 20px;
+            }
+
+            .section {
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <header class="header">
+        <h1 class="name">ARTUR CEGIEŁKA-POSŁUSZNY</h1>
+        <div class="title">SOFTWARE ENGINEER</div>
+        <div class="contact-info">
+            883-444-064 • a.c.posluszny@gmail.com<br>
+            https://gitlab.com/a.c.posluszny • Warsaw, Poland
+        </div>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <section class="section">
+                <h2>SKILLS</h2>
+                <ul class="skills-list">
+                    <li>
+                        <span class="skill-category">Programming Languages</span>
+                        <div class="skill-items">Java, C#, Python</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">Databases</span>
+                        <div class="skill-items">Oracle, MySQL, SQL Server, PostgreSQL</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">Testing</span>
+                        <div class="skill-items">NUnit, JUnit, Selenium</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">IDE</span>
+                        <div class="skill-items">Rider, IntelliJ IDEA, Visual Studio</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">VCS</span>
+                        <div class="skill-items">Git, GitHub, GitLab, BitBucket</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">Build</span>
+                        <div class="skill-items">Maven, Gradle</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">Web</span>
+                        <div class="skill-items">Spring, Jsoup, Java Net</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">DevOps</span>
+                        <div class="skill-items">Azure DevOps, Docker, AWS</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">Big Data</span>
+                        <div class="skill-items">Apache Spark</div>
+                    </li>
+                    <li>
+                        <span class="skill-category">Other</span>
+                        <div class="skill-items">Jenkins, Jira</div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>LANGUAGES</h2>
+                <ul class="languages">
+                    <li><span>Polish</span><span class="language-level">Native</span></li>
+                    <li><span>English</span><span class="language-level">C1</span></li>
+                    <li><span>Chinese</span><span class="language-level">B1</span></li>
+                    <li><span>Japanese</span><span class="language-level">A2</span></li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>CERTIFICATIONS</h2>
+                <div class="cert-item">
+                    <strong>AWS Certified Cloud Practitioner</strong><br>
+                    <span class="cert-org">Amazon, 2024</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>INTERESTS</h2>
+                <div class="interests-list">
+                    History • Computer Games<br>
+                    Board Games • Prime Numbers
+                </div>
+            </section>
+        </aside>
+
+        <main class="content">
+            <section class="section">
+                <h2>ABOUT</h2>
+                <p class="about-text">
+                    During my linguistic studies, I developed key skills such as perseverance and consistency. I live by the principle that the only two obstacles on the path to success are inaction and giving up on a chosen course. This mindset has driven me to always put maximum effort into everything I do.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>EXPERIENCE</h2>
+
+                <div class="experience-item">
+                    <div class="job-title">C#/Java Developer</div>
+                    <div class="company">YouNeedIT, Warsaw, Poland</div>
+                    <div class="date">02.2025 – Present</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Junior Java Developer</div>
+                    <div class="company">Entres LTD, Lancaster, UK</div>
+                    <div class="date">09.2023 – Present</div>
+                    <div class="description">
+                        • Developing algorithms for fraudulent transaction detection and financial security<br>
+                        • Building stock market analysis and trading algorithms at HSBC (Python)<br>
+                        • Working on database virtualization, data aggregation, and information management<br>
+                        • Optimizing data flow and system performance for scalability and efficiency
+                        <div class="tech-stack">
+                            <span class="tech-label">Technology Stack</span>
+                            <div class="tech-list">Java, Python, Maven, Apache Spark, Jira, IntelliJ, Git (BitBucket), Jenkins</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Chinese Language Translator</div>
+                    <div class="company">Priority - HR and Legal Service, Warsaw, Poland</div>
+                    <div class="date">11.2022 – 04.2023</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Office Manager</div>
+                    <div class="company">Futuro Oro, Warsaw, Poland</div>
+                    <div class="date">01.2021 – 01.2023</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>EDUCATION</h2>
+
+                <div class="education-item">
+                    <div class="job-title">Bachelor of Engineering in Computer Science</div>
+                    <div class="company">Polish-Japanese Academy of Information Technology</div>
+                    <div class="date">Expected 2027</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="job-title">Bachelor of Arts in Sinology</div>
+                    <div class="company">University of Warsaw</div>
+                    <div class="date">2022</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="job-title">Japanese Studies</div>
+                    <div class="company">University of Warsaw</div>
+                    <div class="date">2021</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>PROJECTS</h2>
+                <ul class="projects-list">
+                    <li class="project-item">
+                        <div class="project-title">Job Portal Aggregator and Auto-Apply System</div>
+                        <div class="project-description">Application that aggregates job listings from multiple portals with automated application features</div>
+                        <a href="https://gitlab.com/a.c.posluszny/job-portal-aggregator-and-auto-apply-system" class="project-link">gitlab.com/a.c.posluszny/job-portal-aggregator-and-auto-apply-system</a>
+                    </li>
+
+                    <li class="project-item">
+                        <div class="project-title">Price Comparison Tool</div>
+                        <div class="project-description">Tool for collecting and comparing product prices from various online stores</div>
+                        <a href="https://gitlab.com/a.c.posluszny/price-comparison-tool" class="project-link">gitlab.com/a.c.posluszny/price-comparison-tool</a>
+                    </li>
+
+                    <li class="project-item">
+                        <div class="project-title">Programming Language Mizu</div>
+                        <div class="project-description">Custom programming language designed and implemented for educational purposes</div>
+                        <a href="https://gitlab.com/a.c.posluszny/mizu.git" class="project-link">gitlab.com/a.c.posluszny/mizu.git</a>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="consent">
+                I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
