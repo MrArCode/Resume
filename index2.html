@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Cegiełka-Posłuszny - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #1d1d1f;
+            background: #fff;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm 25mm;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d1d1d6;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 15px;
+            color: #86868b;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            color: #1d1d1f;
+            line-height: 1.5;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #515154;
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 1.5px;
+            background: #1d1d1f;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 3px;
+        }
+
+        .company {
+            font-size: 11.5px;
+            color: #515154;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .date {
+            font-size: 10px;
+            color: #86868b;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 11.5px;
+            color: #1d1d1f;
+            line-height: 1.5;
+        }
+
+        .description ul {
+            padding-left: 16px;
+            margin-top: 6px;
+        }
+
+        .description li {
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            margin-top: 8px;
+            font-size: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #f5f5f7;
+        }
+
+        .tech-label {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 3px;
+            display: block;
+        }
+
+        .tech-list {
+            color: #86868b;
+            line-height: 1.4;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 20px;
+            font-size: 11px;
+        }
+
+        .skill-item {
+            padding: 8px 0;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+            display: block;
+            font-size: 11px;
+        }
+
+        .skill-items {
+            color: #515154;
+            line-height: 1.4;
+            font-size: 10px;
+        }
+
+        .projects-list {
+            list-style: none;
+        }
+
+        .project-item {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .project-description {
+            color: #515154;
+            margin-bottom: 6px;
+            line-height: 1.5;
+            font-size: 11px;
+        }
+
+        .project-link {
+            color: #86868b;
+            font-size: 9px;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .project-link:hover {
+            color: #1d1d1f;
+        }
+
+        .education-list {
+            list-style: none;
+        }
+
+        .education-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-title {
+            font-weight: 600;
+            color: #1d1d1f;
+            font-size: 11.5px;
+            margin-bottom: 2px;
+        }
+
+        .education-school {
+            color: #515154;
+            font-size: 10.5px;
+        }
+
+        .cert-item {
+            font-size: 11px;
+            color: #1d1d1f;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .cert-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .cert-org {
+            color: #86868b;
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            font-size: 11px;
+        }
+
+        .language-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .language-level {
+            color: #86868b;
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .interests-text {
+            font-size: 11px;
+            color: #515154;
+            line-height: 1.5;
+        }
+
+        .consent {
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid #d1d1d6;
+            font-size: 8px;
+            color: #86868b;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        @media print {
+            .cv-container {
+                margin: 0;
+                padding: 15mm 20mm;
+                max-width: none;
+            }
+
+            body {
+                font-size: 11px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .section {
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <header class="header">
+        <h1 class="name">ARTUR CEGIEŁKA-POSŁUSZNY</h1>
+        <div class="title">SOFTWARE ENGINEER</div>
+        <div class="contact-info">
+            +48 883-444-064 • <a href="mailto:a.c.posluszny@gmail.com">a.c.posluszny@gmail.com</a><br>
+            <a href="https://gitlab.com/a.c.posluszny">gitlab.com/a.c.posluszny</a> • Warsaw, Poland
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>EXPERIENCE</h2>
+
+        <div class="experience-item">
+            <div class="job-title">C# Developer (Data Virtualization Engine)</div>
+            <div class="company">YouNeedIT, Warsaw, Poland</div>
+            <div class="date">02.2025 – Present</div>
+            <div class="description">
+                Developing a high-performance data virtualization engine that consolidates heterogeneous data sources. Key contributions:
+                <ul>
+                    <li><strong>Core Engine Development:</strong> Implemented support for SQL data types (DateTimeOffset, Time) and integrated MSSQL extended properties into the virtualization layer.</li>
+                    <li><strong>Performance Optimization:</strong> Rectified the virtual index creation workflow and engineered materialization processes for virtual views, including implementation of various caching strategies.</li>
+                    <li><strong>Code Quality & Performance:</strong> Refactored core modules to improve readability and maintainability, implementing log optimization with size ceiling to ensure system performance.</li>
+                    <li><strong>Frontend Integration:</strong> Delivered full-stack features in Angular/TypeScript, including View Protection security modules and interactive scheduling GUI components.</li>
+                    <li><strong>Quality & Maintenance:</strong> Reduced technical debt by refactoring legacy C# modules and resolving critical integration test failures in the CI/CD pipeline.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-label">Technology Stack</span>
+                    <div class="tech-list">C# (.NET), Angular, TypeScript, SQL (T-SQL, PL/SQL), Apache Spark, SQL Server, Oracle, PostgreSQL, Azure DevOps, Docker, Git, Rider, DBeaver, Postman</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Junior Java Developer</div>
+            <div class="company">Entres LTD, Lancaster, UK</div>
+            <div class="date">03.2024 – 01.2025</div>
+            <div class="description">
+                Specialized in building high-scale web scraping and data extraction pipelines for financial and analytical systems:
+                <ul>
+                    <li><strong>Universal Scraping Architecture:</strong> Engineered a modular web crawling framework integrated with MCP (Model Context Protocol), capable of handling dynamic, JavaScript-heavy websites using Selenium and Playwright.</li>
+                    <li><strong>AI-Powered Extraction:</strong> Implemented a hybrid extraction mechanism combining traditional HTML parsing with LLM semantic understanding to accurately harvest data from diverse and unstructured web sources.</li>
+                    <li><strong>Anti-Bot Evasion:</strong> Engineered intelligent bots that simulate human behavior by combining AI-driven behavioral patterns with strict deterministic rules, effectively bypassing advanced anti-scraping mechanisms.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-label">Technology Stack</span>
+                    <div class="tech-list">Java, Spring, Selenium, Playwright, Jsoup, AI Agents (LLM Integration), MCP, Docker, Maven, Git</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <span class="skill-category">Core Languages</span>
+                <div class="skill-items">Java, C#, Python</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Frontend</span>
+                <div class="skill-items">Angular, TypeScript, HTML, CSS</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Backend & Frameworks</span>
+                <div class="skill-items">Spring Web, Hibernate, Apache Spark</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Databases</span>
+                <div class="skill-items">PostgreSQL, MySQL, Oracle, SQL Server, SQLite</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Testing</span>
+                <div class="skill-items">JUnit, NUnit, FluentAssertions</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">DevOps & Tools</span>
+                <div class="skill-items">Docker, Azure DevOps, AWS, Jenkins</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Development Tools</span>
+                <div class="skill-items">IntelliJ IDEA, Rider, Visual Studio, Git, Maven, Gradle</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Web Scraping</span>
+                <div class="skill-items">Selenium, Playwright, Jsoup</div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Project Management</span>
+                <div class="skill-items">Jira, Agile, Scrum</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>FEATURED PROJECTS</h2>
+        <ul class="projects-list">
+            <li class="project-item">
+                <div class="project-title">Job Portal Aggregator & Auto-Apply System</div>
+                <div class="project-description">
+                    Automated job search system that aggregates listings from 15+ Polish job portals (Pracuj.pl, NoFluffJobs, JustJoinIT) with intelligent filtering and one-click application. Built with Selenium for dynamic scraping and includes CV customization based on job requirements.
+                </div>
+                <a href="https://gitlab.com/a.c.posluszny/job-portal-aggregator-and-auto-apply-system" class="project-link">View on GitLab →</a>
+            </li>
+
+            <li class="project-item">
+                <div class="project-title">Price Comparison Tool</div>
+                <div class="project-description">
+                    Web scraping tool that collects and compares product prices from 20+ online stores in real-time. Features include price history tracking, alert notifications, and automated data extraction from various e-commerce platforms.
+                </div>
+                <a href="https://gitlab.com/a.c.posluszny/price-comparison-tool" class="project-link">View on GitLab →</a>
+            </li>
+
+            <li class="project-item">
+                <div class="project-title">Programming Language Mizu</div>
+                <div class="project-description">
+                    Custom programming language designed and implemented from scratch for educational purposes. Features include custom syntax, lexer/parser implementation, and basic runtime environment with support for variables, functions, and control flow.
+                </div>
+                <a href="https://gitlab.com/a.c.posluszny/mizu.git" class="project-link">View on GitLab →</a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>EDUCATION</h2>
+        <ul class="education-list">
+            <li class="education-item">
+                <div class="education-title">Bachelor of Engineering in Computer Science</div>
+                <div class="education-school">Polish-Japanese Academy of Information Technology (PJAIT) • Expected 2027</div>
+            </li>
+            <li class="education-item">
+                <div class="education-title">Bachelor of Arts in Sinology</div>
+                <div class="education-school">University of Warsaw • 2019-2022</div>
+            </li>
+            <li class="education-item">
+                <div class="education-title">Bachelor of Arts in Japanese Studies</div>
+                <div class="education-school">University of Warsaw • 2016-2019</div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>CERTIFICATIONS</h2>
+        <div class="cert-item">
+            <strong>AWS Certified Cloud Practitioner</strong><br>
+            <span class="cert-org">Amazon Web Services • 2024</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>LANGUAGES</h2>
+        <div class="languages-grid">
+            <div class="language-item">
+                <span class="language-name">Polish</span>
+                <span class="language-level">Native</span>
+            </div>
+            <div class="language-item">
+                <span class="language-name">English</span>
+                <span class="language-level">C1</span>
+            </div>
+            <div class="language-item">
+                <span class="language-name">Chinese</span>
+                <span class="language-level">B1</span>
+            </div>
+            <div class="language-item">
+                <span class="language-name">Japanese</span>
+                <span class="language-level">A2</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>INTERESTS</h2>
+        <div class="interests-text">
+            History • Computer Games • Prime Numbers
+        </div>
+    </section>
+
+    <div class="consent">
+        I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).
+    </div>
+</div>
+</body>
+</html>
